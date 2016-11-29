@@ -7,7 +7,6 @@ class TextRoundRectView : public ButtonView
 private:
     Font const font_;
 public:
-    TextRoundRectView() = default;
     void drawMouseOver()const override
     {
         RoundRect(20, 90, 300, 300, 10).draw(HSV(0.0, 0.8, 0.8));
@@ -76,10 +75,9 @@ void Main()
 
     ButtonManager buttonManager{inclement, declement};
 
-	while (System::Update())
-	{
-        buttonManager.update();
-        buttonManager.draw();
-        font(L"number = " + ToString(number)).drawCenter(320, 30);
+	while (System::Update()) {
+            buttonManager.update();
+            buttonManager.draw();
+            font(L"number = " + ToString(number)).drawCenter(320, 30);
 	}
 }
