@@ -75,9 +75,9 @@ void Main()
 
     ButtonManager buttonManager{inclement, declement};
 
-	while (System::Update()) {
-            buttonManager.update();
-            buttonManager.draw();
-            font(L"number = " + ToString(number)).drawCenter(320, 30);
-	}
+    while (System::Update()) {
+        buttonManager.update();
+        buttonManager.draw();
+        font(L"number = " + ToString(number)).drawCenter(320, 30);
+    }
 }
