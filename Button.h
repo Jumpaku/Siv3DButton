@@ -1,14 +1,23 @@
 #pragma once
 
-#include"ButtonInterface.h"
+#include"IButton.h"
 #include<Siv3D.hpp>
 #include<functional>
 #include<type_traits>
 
 class ButtonBuilder;
 
+class ButtonView
+{
+public:
+    virtual void drawMouseOver()const = 0;
+    virtual void drawPressed()const = 0;
+    virtual void drawReleased()const = 0;
+    virtual void drawLeft()const = 0;
+};
+
 class Button :
-    public ButtonInterface
+    public IButton
 {
 private:
     std::function<void(void)> onClicked_;
@@ -56,7 +65,7 @@ public:
         shape_ = Shape(subShape);
         return *this;
     }
-    std::shared_ptr<ButtonInterface> build()
+    std::shared_ptr<IButton> build()
     {
         return std::make_shared<Button>(view_, shape_, onClicked_);
     }

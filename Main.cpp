@@ -1,6 +1,7 @@
 ﻿
 #include <Siv3D.hpp>
 #include"Button.h"
+#include"ButtonManager.h"
 
 class TextRoundRectView : public ButtonView
 {
