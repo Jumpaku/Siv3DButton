@@ -256,3 +256,6 @@ Siv3DButton/Engine/
 *.vcxproj
 *.filters
 Siv3DButton/Siv3DButton_log.html
+Engine/
+Example/
+Siv3DButton_log.html
