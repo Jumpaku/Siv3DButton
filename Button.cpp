@@ -15,27 +15,27 @@ void Button::transition()
     switch (getState()) {
     case State::LEFT:
         if (getShape().mouseOver && !getShape().leftPressed) {
-            state_ = State::MOUSE_OVER;
+            setState(State::MOUSE_OVER);
         }
         break;
     case State::MOUSE_OVER:
         if (getShape().leftPressed) {
-            state_ = State::PRESSED;
+            setState(State::PRESSED);
         }
         else if (!getShape().mouseOver) {
-            state_ = State::LEFT;
+            setState(State::LEFT);
         }
         break;
     case State::PRESSED:
         if (!getShape().mouseOver) {
-            state_ = State::LEFT;
+            setState(State::LEFT);
         }
         else if (getShape().leftReleased) {
-            state_ = State::RELEASED;
+            setState(State::RELEASED);
         }
         break;
     case State::RELEASED:
-        state_ = State::MOUSE_OVER;
+        setState(State::MOUSE_OVER);
         break;
     default:
         break;
