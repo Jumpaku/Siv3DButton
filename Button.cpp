@@ -53,16 +53,16 @@ void Button::draw() const
 {
     if (view_ != nullptr) {
         switch (getState()) {
-        case ButtonInterface::State::LEFT:
+        case IButton::State::LEFT:
             view_->drawLeft();
             break;
-        case ButtonInterface::State::MOUSE_OVER:
+        case IButton::State::MOUSE_OVER:
             view_->drawMouseOver();
             break;
-        case ButtonInterface::State::PRESSED:
+        case IButton::State::PRESSED:
             view_->drawPressed();
             break;
-        case ButtonInterface::State::RELEASED:
+        case IButton::State::RELEASED:
             view_->drawReleased();
             break;
         default:
@@ -71,7 +71,7 @@ void Button::draw() const
     }
 }
 
-ButtonInterface::State Button::getState() const
+IButton::State Button::getState() const
 {
     return state_;
 }
